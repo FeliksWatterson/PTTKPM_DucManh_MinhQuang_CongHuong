@@ -1,4 +1,4 @@
-package com.PTTKPM_DucManh_MinhQuang_CongHuong;
+package com.PTTKPM_DucManh_MinhQuang_CongHuong.web_ban_hang;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
