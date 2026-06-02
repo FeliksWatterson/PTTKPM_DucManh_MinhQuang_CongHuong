@@ -2,6 +2,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE products;
 SET FOREIGN_KEY_CHECKS = 1;
 
+INSERT INTO customer (email, password, full_name, role) 
+VALUES ('admin@gmail.com', '$2a$10$X.H/L0J0uR0m9X/jQ4Z5e.tT1N5h7p7x8x9X/jQ4Z5e.tT1N5h7p', 'Quản trị viên', 'ADMIN');
 
 -- ban chay
 INSERT INTO products (name, description, price, original_price, category, image_url, hover_image_url, stock, section)

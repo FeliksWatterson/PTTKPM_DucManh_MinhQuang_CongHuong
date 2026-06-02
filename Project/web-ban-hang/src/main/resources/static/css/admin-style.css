@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --salmon-pink: hsl(34, 35%, 70%);
+  --eerie-black: hsl(34, 10%, 15%);
+  --sonic-silver: hsl(34, 15%, 55%);
+  --cultured: hsl(34, 40%, 95%);
+  --white: hsl(0, 0%, 100%);
+  --onyx: hsl(34, 10%, 30%);
+  --border-radius-md: 10px;
+  --border-radius-sm: 5px;
+  --transition-timing: 0.2s ease;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--cultured);
+  color: var(--onyx);
+}
+
+.bg-moc-dark {
+  background-color: var(--eerie-black) !important;
+  color: var(--white);
+}
+.text-moc-accent {
+  color: var(--salmon-pink) !important;
+}
+.bg-moc-accent {
+  background-color: var(--salmon-pink) !important;
+  color: var(--white);
+}
+.border-moc {
+  border: 1px solid var(--cultured) !important;
+}
+
+.admin-card {
+  background: var(--white);
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.03);
+  transition: var(--transition-timing);
+}
+
+.admin-card:hover {
+  box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.08);
+}
+
+.btn-moc {
+  background: var(--salmon-pink);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-timing);
+  border: none;
+}
+.btn-moc:hover {
+  background: var(--eerie-black);
+  color: var(--white);
+}
+
+/* Custom Sidebar */
+.nav-link {
+  color: var(--onyx) !important;
+  transition: var(--transition-timing);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-link:hover {
+  color: var(--salmon-pink) !important;
+  background: hsla(34, 35%, 70%, 0.1);
+  font-weight: 600;
+}
+.nav-link.active {
+  background-color: var(--salmon-pink) !important;
+  color: var(--white) !important;
+  font-weight: 600;
+  box-shadow: 0 4px 6px hsla(34, 35%, 70%, 0.3);
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <div
+    th:fragment="sidebar"
+    class="d-flex flex-column flex-shrink-0 p-3 bg-white border-end"
+    style="
+      width: 260px;
+      min-height: 100vh;
+      border-color: var(--cultured) !important;
+    "
+  >
+    <a
+      href="/admin/dashboard"
+      class="d-flex align-items-center justify-content-center mb-4 mt-2 text-decoration-none w-100"
+    >
+      <img
+        th:src="@{/images/logo/logo.svg}"
+        alt="Mộc Logo"
+        style="max-width: 140px; height: auto"
+      />
+    </a>
+
+    <ul class="nav nav-pills flex-column mb-auto gap-2">
+      <li class="nav-item">
+        <a href="/admin/dashboard" class="nav-link active" aria-current="page">
+          <ion-icon name="grid-outline"></ion-icon> Tổng quan
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/admin/products" class="nav-link text-dark">
+          <ion-icon name="cube-outline"></ion-icon> Quản lý sản phẩm
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/admin/orders" class="nav-link text-dark">
+          <ion-icon name="receipt-outline"></ion-icon> Quản lý đơn hàng
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/admin/users" class="nav-link text-dark">
+          <ion-icon name="people-outline"></ion-icon> Quản lý người dùng
+        </a>
+      </li>
+    </ul>
+
+    <hr style="border-color: var(--sonic-silver)" />
+    <div>
+      <a href="/logout" class="btn btn-moc w-100 py-2">
+        <ion-icon
+          name="log-out-outline"
+          style="vertical-align: middle; font-size: 18px"
+        ></ion-icon>
+        Đăng xuất
+      </a>
+    </div>
+  </div>
+</html>
