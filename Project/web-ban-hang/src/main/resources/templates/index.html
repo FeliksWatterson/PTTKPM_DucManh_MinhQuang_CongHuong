@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mộc-E-commerce Group 3</title>
+    <link
+      rel="shortcut icon"
+      th:href="@{/images/logo/favicon.svg}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <base th:href="@{/}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header th:replace="~{fragment/header :: header}"></header>
+    <main>
+      <div class="banner">
+        <div class="container">
+          <div class="slider-container">
+            <div class="slider-item">
+              <img th:src="@{/images/banner-1.jpg}" alt="" class="banner-img" />
+              <div class="banner-content">
+                <p class="banner-subtitle">Sản Phẩm</p>
+                <h2 class="banner-title">Chào Mừng Ngày Phụ Nữ Việt Nam</h2>
+                <p class="banner-text">chỉ từ <b>249</b>.000đ</p>
+                <a href="#" class="banner-btn">Khám Phá Ngay</a>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img th:src="@{/images/banner-2.jpg}" alt="" class="banner-img" />
+              <div class="banner-content">
+                <p class="banner-subtitle">Thời Trang Hàng Ngày</p>
+                <h2 class="banner-title">Đơn Giản & Tinh Tế</h2>
+                <p class="banner-text">chỉ từ <b>159</b>.000đ</p>
+                <a href="#" class="banner-btn">Khám Phá Ngay</a>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img th:src="@{/images/banner-3.jpg}" alt="" class="banner-img" />
+              <div class="banner-content">
+                <p class="banner-subtitle">Thiết bị công nghệ</p>
+                <h2 class="banner-title">Tiện ích cho cuộc sống hiện đại</h2>
+                <p class="banner-text">chỉ từ <b>349</b>.000đ</p>
+                <a href="#" class="banner-btn">Khám Phá Ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="container">
+          <div class="category-item-container scrolling">
+            <div class="category-items-wrapper">
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/tinhdau.jpg}" alt="" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Tinh Dầu Thiên Nhiên</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 24k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/book.jpg}" alt="winter wear" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Sách Kinh Doanh</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 1k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/sac.jpg}" alt="glasses & lens" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Sạc Dự Phòng</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 20k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img
+                    th:src="@{/images/icons/keyboard.jpg}"
+                    alt="shorts & jeans"
+                  />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Bàn Phím Cơ</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 17k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/kem.jpg}" alt="t-shirts" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Kem Dưỡng</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 39k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/op.jpg}" alt="jacket" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Ốp Lưng Điện Thoại</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 5k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/iem.jpg}" alt="watch" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Tai Nghe IEM</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 2k+ / Tháng</a>
+                </div>
+              </div>
+              <div class="category-item">
+                <div class="category-img-box">
+                  <img th:src="@{/images/icons/loa.jpg}" alt="hat & caps" />
+                </div>
+                <div class="category-content-box">
+                  <div class="category-content-flex">
+                    <h3 class="category-item-title">Loa Bluetooth</h3>
+                  </div>
+                  <a href="#" class="category-btn">Bán 3k+ / Tháng</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-container">
+        <div class="container">
+          <div class="sidebar has-scrollbar" data-mobile-menu>
+            <div class="sidebar-category">
+              <div class="sidebar-top">
+                <h2 class="sidebar-title">Danh Mục</h2>
+                <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+              </div>
+
+              <ul class="sidebar-menu-category-list">
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/thoitrang.jpg}"
+                        alt="clothes"
+                        width="20"
+                        height="20"
+                        class="menu-title-img"
+                      />
+                      <p class="menu-title">Thời Trang</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/lamdep.jpg}"
+                        alt="footwear"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+                      <p class="menu-title">Sức Khỏe & Làm Đẹp</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/decor.jpg}"
+                        alt="clothes"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+                      <p class="menu-title">Gia Dụng & Nhà Cửa</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/tech.jpg}"
+                        alt="perfume"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+                      <p class="menu-title">Công Nghệ & Thiết Bị Số</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/travel.jpg}"
+                        alt="cosmetics"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+                      <p class="menu-title">Du Lịch & Dã Ngoại</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/vpp.jpg}"
+                        alt="glasses"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+                      <p class="menu-title">Sách & Văn Phòng Phẩm</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+                <li class="sidebar-menu-category">
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                      <img
+                        th:src="@{/images/icons/kid.jpg}"
+                        alt="bags"
+                        class="menu-title-img"
+                        width="20"
+                        height="20"
+                      />
+                      <p class="menu-title">Đồ Chơi & Trẻ Em</p>
+                    </div>
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon
+                      ><ion-icon
+                        name="remove-outline"
+                        class="remove-icon"
+                      ></ion-icon>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="product-showcase">
+              <h3 class="showcase-heading">sản phẩm bán chạy</h3>
+              <div class="showcase-wrapper">
+                <div class="showcase-container">
+                  <div class="showcase" th:each="p : ${sidebarBestSellers}">
+                    <a
+                      th:href="@{'/product/' + ${p.id}}"
+                      class="showcase-img-box"
+                    >
+                      <img
+                        th:src="@{${p.imageUrl}}"
+                        th:alt="${p.name}"
+                        width="75"
+                        height="75"
+                        class="showcase-img"
+                      />
+                    </a>
+                    <div class="showcase-content">
+                      <a th:href="@{'/product/' + ${p.id}}">
+                        <h4 class="showcase-title" th:text="${p.name}">
+                          Product Name
+                        </h4>
+                      </a>
+                      <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                      </div>
+                      <div class="price-box">
+                        <del
+                          th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                          th:text="${#numbers.formatDecimal(p.originalPrice, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                        >
+                          Old Price
+                        </del>
+                        <p
+                          class="price"
+                          th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                        >
+                          Current Price
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-box">
+            <div class="product-minimal">
+              <div class="product-showcase">
+                <h2 class="title">Sản Phẩm Mới</h2>
+                <div class="showcase-wrapper has-scrollbar">
+                  <div class="showcase-container">
+                    <div class="showcase" th:each="p : ${newProducts}">
+                      <a
+                        th:href="@{'/product/' + ${p.id}}"
+                        class="showcase-img-box"
+                      >
+                        <img
+                          th:src="@{${p.imageUrl}}"
+                          th:alt="${p.name}"
+                          width="70"
+                          class="showcase-img"
+                        />
+                      </a>
+                      <div class="showcase-content">
+                        <a th:href="@{'/product/' + ${p.id}}">
+                          <h4 class="showcase-title" th:text="${p.name}">
+                            Product Name
+                          </h4>
+                        </a>
+                        <a class="showcase-category" th:text="${p.category}"
+                          >Category</a
+                        >
+                        <div class="price-box">
+                          <p
+                            class="price"
+                            th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Price
+                          </p>
+                          <del
+                            th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                            th:text="${#numbers.formatDecimal(p.originalPrice, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Old Price
+                          </del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-showcase">
+                <h2 class="title">Mua Nhiều Nhất</h2>
+                <div class="showcase-wrapper has-scrollbar">
+                  <div class="showcase-container">
+                    <div class="showcase" th:each="p : ${mostBoughtProducts}">
+                      <a
+                        th:href="@{'/product/' + ${p.id}}"
+                        class="showcase-img-box"
+                      >
+                        <img
+                          th:src="@{${p.imageUrl}}"
+                          th:alt="${p.name}"
+                          width="70"
+                          class="showcase-img"
+                        />
+                      </a>
+                      <div class="showcase-content">
+                        <a th:href="@{'/product/' + ${p.id}}">
+                          <h4 class="showcase-title" th:text="${p.name}">
+                            Product Name
+                          </h4>
+                        </a>
+                        <a class="showcase-category" th:text="${p.category}"
+                          >Category</a
+                        >
+                        <div class="price-box">
+                          <p
+                            class="price"
+                            th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Price
+                          </p>
+                          <del
+                            th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                            th:text="${#numbers.formatDecimal(p.originalPrice, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Old Price
+                          </del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-showcase">
+                <h2 class="title">Được Đánh Giá Cao</h2>
+                <div class="showcase-wrapper has-scrollbar">
+                  <div class="showcase-container">
+                    <div class="showcase" th:each="p : ${topRatedProducts}">
+                      <a
+                        th:href="@{'/product/' + ${p.id}}"
+                        class="showcase-img-box"
+                      >
+                        <img
+                          th:src="@{${p.imageUrl}}"
+                          th:alt="${p.name}"
+                          width="70"
+                          class="showcase-img"
+                        />
+                      </a>
+                      <div class="showcase-content">
+                        <a th:href="@{'/product/' + ${p.id}}">
+                          <h4 class="showcase-title" th:text="${p.name}">
+                            Product Name
+                          </h4>
+                        </a>
+                        <a class="showcase-category" th:text="${p.category}"
+                          >Category</a
+                        >
+                        <div class="price-box">
+                          <p
+                            class="price"
+                            th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Price
+                          </p>
+                          <del
+                            th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                            th:text="${#numbers.formatDecimal(p.originalPrice, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Old Price
+                          </del>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="flash-sale" class="product-featured">
+              <h2 class="title">Flash Sale</h2>
+              <div class="slider-with-arrows">
+                <div class="showcase-wrapper has-scrollbar">
+                  <div
+                    class="showcase-container"
+                    th:each="p : ${flashSaleProducts}"
+                  >
+                    <div class="showcase">
+                      <div class="showcase-banner">
+                        <img
+                          th:src="@{${p.imageUrl}}"
+                          th:alt="${p.name}"
+                          class="showcase-img"
+                        />
+                      </div>
+                      <div class="showcase-content">
+                        <div class="showcase-rating">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star-outline"></ion-icon>
+                          <ion-icon name="star-outline"></ion-icon>
+                        </div>
+                        <a th:href="@{'/product/' + ${p.id}}">
+                          <h3 class="showcase-title" th:text="${p.name}">
+                            Product Name
+                          </h3>
+                        </a>
+                        <p class="showcase-desc" th:text="${p.description}">
+                          Description
+                        </p>
+                        <div class="price-box">
+                          <p
+                            class="price"
+                            th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Price
+                          </p>
+                          <del
+                            th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                            th:text="${#numbers.formatDecimal(p.originalPrice, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                          >
+                            Old Price
+                          </del>
+                        </div>
+                        <form
+                          th:action="@{/cart/add}"
+                          method="post"
+                          style="margin-bottom: 15px"
+                        >
+                          <input
+                            type="hidden"
+                            name="productId"
+                            th:value="${p.id}"
+                          />
+                          <input type="hidden" name="quantity" value="1" />
+                          <input type="hidden" name="returnUrl" value="/" />
+                          <button type="submit" class="add-cart-btn">
+                            Thêm Vào Giỏ
+                          </button>
+                        </form>
+                        <div class="showcase-status">
+                          <div class="wrapper">
+                            <p>
+                              Đã Bán:
+                              <b
+                                th:text="${p.stock != null ? (p.stock % 17 + 5) : '0'}"
+                                >--</b
+                              >
+                            </p>
+                            <p>
+                              Kho:
+                              <b th:text="${p.stock != null ? p.stock : '0'}"
+                                >Stock</b
+                              >
+                            </p>
+                          </div>
+                          <div class="showcase-status-bar"></div>
+                        </div>
+                        <div class="countdown-box">
+                          <p class="countdown-desc">
+                            Flash sale sẽ kết thúc sau:
+                          </p>
+                          <div class="countdown">
+                            <div class="countdown-content">
+                              <p class="display-number">01</p>
+                              <p class="display-text">Ngày</p>
+                            </div>
+                            <div class="countdown-content">
+                              <p class="display-number">03</p>
+                              <p class="display-text">Giờ</p>
+                            </div>
+                            <div class="countdown-content">
+                              <p class="display-number">02</p>
+                              <p class="display-text">Phút</p>
+                            </div>
+                            <div class="countdown-content">
+                              <p class="display-number">36</p>
+                              <p class="display-text">Giây</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="slider-btn prev" data-slider-prev>
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="slider-btn next" data-slider-next>
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="product-main">
+              <h2 class="title">Gợi Ý Hôm Nay</h2>
+              <div class="product-grid">
+                <div class="showcase" th:each="p : ${suggestedProducts}">
+                  <div class="showcase-banner">
+                    <img
+                      th:src="@{${p.imageUrl}}"
+                      th:alt="${p.name}"
+                      width="300"
+                      class="product-img default"
+                    />
+                    <img
+                      th:src="@{${p.hoverImageUrl != null ? p.hoverImageUrl : p.imageUrl}}"
+                      th:alt="${p.name}"
+                      width="300"
+                      class="product-img hover"
+                    />
+
+                    <p
+                      class="showcase-badge"
+                      th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                    >
+                      Sale
+                    </p>
+                    <div class="showcase-actions">
+                      <form
+                        th:action="@{/cart/add}"
+                        method="post"
+                        style="display: inline"
+                      >
+                        <input
+                          type="hidden"
+                          name="productId"
+                          th:value="${p.id}"
+                        />
+                        <input type="hidden" name="quantity" value="1" />
+                        <input type="hidden" name="returnUrl" value="/" />
+                        <button
+                          type="submit"
+                          class="btn-action"
+                          title="Thêm vào giỏ hàng"
+                        >
+                          <ion-icon name="bag-add-outline"></ion-icon>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="showcase-content">
+                    <a class="showcase-category" th:text="${p.category}"
+                      >Category</a
+                    >
+                    <a th:href="@{'/product/' + ${p.id}}">
+                      <h3 class="showcase-title" th:text="${p.name}">
+                        Product Name
+                      </h3>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <div class="price-box">
+                      <p
+                        class="price"
+                        th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                      >
+                        Price
+                      </p>
+                      <del
+                        th:if="${p.originalPrice != null and p.originalPrice > p.price}"
+                        th:text="${#numbers.formatDecimal(p.originalPrice, 0, 'COMMA', 0, 'POINT')} + 'đ'"
+                      >
+                        Old Price
+                      </del>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer th:replace="~{fragment/footer :: footer}"></footer>
+
+    <script th:src="@{/js/script.js}"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script th:inline="javascript">
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof window.showGlobalModal !== "function") {
+          console.error("showGlobalModal function not found.");
+          return;
+        }
+
+        const messages = [
+          {
+            msg: /*[[${welcomeMessage}]]*/ null,
+            type: "success",
+            duration: 3000,
+          },
+          {
+            msg: /*[[${cartSuccessMessage}]]*/ null,
+            type: "success",
+            duration: 3000,
+          },
+          {
+            msg: /*[[${successMessage}]]*/ null,
+            type: "success",
+            duration: 3000,
+          },
+          {
+            msg: /*[[${passwordSuccess}]]*/ null,
+            type: "success",
+            duration: 3000,
+          },
+          {
+            msg: /*[[${deleteSuccess}]]*/ null,
+            type: "success",
+            duration: 3000,
+          },
+          {
+            msg: /*[[${logoutMessage}]]*/ null,
+            type: "success",
+            duration: 3000,
+          },
+
+          {
+            msg: /*[[${cartErrorMessage}]]*/ null,
+            type: "error",
+            duration: 4000,
+          },
+          { msg: /*[[${errorMessage}]]*/ null, type: "error", duration: 4000 },
+          { msg: /*[[${loginError}]]*/ null, type: "error", duration: 4000 },
+          { msg: /*[[${passwordError}]]*/ null, type: "error", duration: 4000 },
+          { msg: /*[[${deleteError}]]*/ null, type: "error", duration: 4000 },
+          { msg: /*[[${checkoutError}]]*/ null, type: "error", duration: 4000 },
+        ];
+
+        for (const item of messages) {
+          if (item.msg && item.msg.trim() !== "") {
+            window.showGlobalModal(item.msg, item.type, item.duration);
+            break;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

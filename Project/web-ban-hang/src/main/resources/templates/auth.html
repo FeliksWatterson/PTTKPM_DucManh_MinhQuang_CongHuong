@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/auth.css}" />
+    <title>Login-Mộc E-Commmerce</title>
+  </head>
+  <body class="auth-page-body">
+    <header>
+      <div class="header-main">
+        <div class="container">
+          <a th:href="@{/}" class="header-logo">
+            <img
+              th:src="@{/images/logo/logo.svg}"
+              alt="Mộc Logo"
+              width="120"
+              height="36"
+            />
+          </a>
+
+          <a href="#" class="auth-need-help">Bạn cần trợ giúp?</a>
+        </div>
+      </div>
+    </header>
+    <div
+      class="container"
+      id="container"
+      th:classappend="${showRegister} ? ' active' : ''"
+    >
+      <div class="form-container sign-up">
+        <form th:action="@{/register}" method="post" th:object="${customer}">
+          <h1>Tạo tài khoản</h1>
+          <span>Dùng email của bạn để đăng ký</span>
+
+          <input
+            type="text"
+            th:field="*{fullName}"
+            placeholder="Tên Đăng Nhập"
+            required
+          />
+          <input
+            type="email"
+            th:field="*{email}"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            th:field="*{password}"
+            placeholder="Mật Khẩu"
+            required
+          />
+
+          <p
+            th:if="${errorMessage}"
+            style="color: red; font-size: 13px; margin-top: 5px"
+            th:text="${errorMessage}"
+          ></p>
+
+          <button type="submit">Đăng ký</button>
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form th:action="@{/login}" method="post">
+          <h1>Đăng Nhập</h1>
+          <span>Sử dụng email và mật khẩu</span>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email / Tên Đăng Nhập"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Mật Khẩu"
+            required
+          />
+          <button type="submit">Đăng Nhập</button>
+
+          <p
+            th:if="${loginError}"
+            style="color: red; font-size: 13px"
+            th:text="${loginError}"
+          ></p>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Đã Có Tài Khoản?</h1>
+            <p>Đăng nhập để tiếp tục.</p>
+            <button class="hidden" id="login">Đăng Nhập</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Chưa Có Tài Khoản?</h1>
+            <p>Tạo tài khoản mới để nhận nhiều ưu đãi hấp dẫn.</p>
+            <button class="hidden" id="register">Đăng Ký</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer th:replace="~{fragment/footer :: footer}"></footer>
+
+    <script th:src="@{/js/auth.js}"></script>
+    <script th:inline="javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("container");
+
+        const showSuccessPopup = false;
+        const successMessage = null;
+        const authToast = document.getElementById("authToast");
+
+        if (showSuccessPopup && successMessage && authToast) {
+          authToast.classList.add("show-once");
+          setTimeout(() => {
+            if (authToast) authToast.classList.remove("show-once");
+          }, 5000);
+        }
+      });
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

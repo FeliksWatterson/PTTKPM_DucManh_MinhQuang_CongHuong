@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <footer th:fragment="footer" class="new-site-footer">
+      <div class="container">
+        <div class="new-footer-main">
+          <a
+            th:href="@{/}"
+            class="header-logo"
+            style="justify-content: center; margin-bottom: 25px"
+          >
+            <img
+              th:src="@{/images/logo/logo.svg}"
+              alt="Logo Mộc"
+              width="140"
+              height="42"
+            />
+          </a>
+
+          <ul class="new-footer-social-list">
+            <li>
+              <a href="#" class="new-footer-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="new-footer-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="new-footer-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="new-footer-social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+          </ul>
+
+          <p class="new-footer-subtitle">
+            Mộc E-commerce, dự án được thực hiện bởi sinh viên Nhóm 3 - N04 OOP
+            Kì I 25-26
+          </p>
+
+        <div class="new-footer-bottom">
+          <img
+            th:src="@{/images/payment.png}"
+            alt="phương thức thanh toán"
+            class="payment-img"
+          />
+          <p class="copyright">Copyright &copy; 2025 _2imspencer</p>
+        </div>
+      </div>
+      <div id="globalModalOverlay" class="global-modal-overlay"></div>
+      <div id="globalModalContent" class="global-modal-content">
+        <button
+          type="button"
+          id="globalModalCloseBtn"
+          class="global-modal-close-btn"
+        >
+          &times;
+        </button>
+        <div id="globalModalIcon" class="global-modal-icon"></div>
+        <p id="globalModalMessage" class="global-modal-message"></p>
+      </div>
+    </footer>
+  </body>
+</html>

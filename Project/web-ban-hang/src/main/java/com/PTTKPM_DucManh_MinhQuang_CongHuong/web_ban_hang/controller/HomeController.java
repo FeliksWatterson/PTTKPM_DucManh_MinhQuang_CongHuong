@@ -1,0 +1,27 @@
+package com.PTTKPM_DucManh_MinhQuang_CongHuong.controller;
+
+import com.PTTKPM_DucManh_MinhQuang_CongHuong.services.ProductService;
+import jakarta.servlet.http.HttpSession; 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+    @Autowired
+    private ProductService productService;
+
+    @GetMapping("/")
+    public String showHomePage(Model model, HttpSession session) { 
+        model.addAttribute("sidebarBestSellers", productService.findSidebarBestSellers(4));
+        model.addAttribute("newProducts", productService.findNewProducts(4));
+        model.addAttribute("mostBoughtProducts", productService.findProductsBySection("mostBought", 4));
+        model.addAttribute("topRatedProducts", productService.findHighlyRatedProducts(4));
+        model.addAttribute("flashSaleProducts", productService.findProductsOnSale(2));
+        model.addAttribute("suggestedProducts", productService.findSuggestedProducts());
+
+        return "index";
+    }
+}
