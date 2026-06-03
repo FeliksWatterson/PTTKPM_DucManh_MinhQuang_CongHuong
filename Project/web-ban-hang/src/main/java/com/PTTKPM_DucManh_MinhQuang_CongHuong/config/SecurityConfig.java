@@ -21,7 +21,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // Tạo nhanh 2 tài khoản ảo trong bộ nhớ để test phân quyền
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
         UserDetails user = User.withUsername("user1")
@@ -29,7 +28,7 @@ public class SecurityConfig {
                 .roles("USER")
                 .build();
 
-        UserDetails admin = User.withUsername("admin1")
+        UserDetails admin = User.withUsername("admin1@gmail.com")
                 .password(encoder.encode("123"))
                 .roles("ADMIN")
                 .build();
@@ -40,20 +39,29 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // Tạm thời tắt CSRF để dễ test các hàm POST/PUT
+            .csrf(csrf -> csrf.disable()) 
             .authorizeHttpRequests(auth -> auth
-                // Chặn toàn bộ URL có tiền tố /admin/, yêu cầu quyền ADMIN
                 .requestMatchers("/admin/**").hasRole("ADMIN")
-                // Các đường dẫn còn lại cho phép truy cập tự do
-                .requestMatchers("/**", "/css/**", "/js/**", "/images/**").permitAll()
+                .requestMatchers("/**", "/css/**", "/js/**", "/images/**", "/admin/login").permitAll()
                 .anyRequest().authenticated()
             )
-            // Sử dụng form đăng nhập mặc định cực đẹp của Spring Security để test nhanh
             .formLogin(form -> form
-                .defaultSuccessUrl("/admin/dashboard", true) // Đăng nhập xong nhảy vào trang admin test
+                .loginPage("/admin/login")
+                .loginProcessingUrl("/do-login")
+                .failureUrl("/admin/login?error=true")
+                .successHandler((request, response, authentication) -> {
+                    boolean isAdmin = authentication.getAuthorities().stream()
+                            .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+                    if (isAdmin) {
+                        response.sendRedirect("/admin/dashboard");
+                    } else {
+                        response.sendRedirect("/");
+                    }
+                })
                 .permitAll()
             )
             .logout(logout -> logout
+                .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
                 .permitAll()
             );

@@ -7,7 +7,6 @@ import com.PTTKPM_DucManh_MinhQuang_CongHuong.interfaces.CustomerInterface;
 import com.PTTKPM_DucManh_MinhQuang_CongHuong.model.Address;
 import com.PTTKPM_DucManh_MinhQuang_CongHuong.interfaces.AddressInterface;
 import jakarta.servlet.http.HttpSession;
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.util.Optional;
 
 @Controller

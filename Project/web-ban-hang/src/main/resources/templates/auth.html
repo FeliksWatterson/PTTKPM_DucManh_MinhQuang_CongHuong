@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
@@ -88,6 +88,18 @@
             required
           />
           <button type="submit">Đăng Nhập</button>
+          <div class="text-center mt-3">
+            <a
+              href="/admin/login"
+              style="
+                color: var(--sonic-silver);
+                font-size: 0.85rem;
+                text-decoration: underline;
+              "
+            >
+              Bạn là Admin? Đăng nhập tại đây
+            </a>
+          </div>
 
           <p
             th:if="${loginError}"

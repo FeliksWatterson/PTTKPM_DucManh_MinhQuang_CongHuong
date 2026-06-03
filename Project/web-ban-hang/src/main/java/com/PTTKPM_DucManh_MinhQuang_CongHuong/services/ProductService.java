@@ -1,11 +1,11 @@
 package com.PTTKPM_DucManh_MinhQuang_CongHuong.services;
 
-import com.PTTKPM_DucManh_MinhQuang_CongHuong.interfaces.ProductInterface; // Assuming you have this interface
+import com.PTTKPM_DucManh_MinhQuang_CongHuong.interfaces.ProductInterface; 
 import com.PTTKPM_DucManh_MinhQuang_CongHuong.model.Product;
 import com.PTTKPM_DucManh_MinhQuang_CongHuong.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest; // <-- THÊM IMPORT NÀY
-import org.springframework.data.domain.Pageable; // <-- THÊM IMPORT NÀY
+import org.springframework.data.domain.PageRequest; 
+import org.springframework.data.domain.Pageable; 
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

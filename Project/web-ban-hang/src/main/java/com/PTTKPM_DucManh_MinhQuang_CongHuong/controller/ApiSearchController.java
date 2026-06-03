@@ -27,4 +27,4 @@ public class ApiSearchController {
         List<Product> results = productService.searchProducts(query, 5); 
         return ResponseEntity.ok(results);
     }
-}
+} 
